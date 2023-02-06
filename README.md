@@ -9,7 +9,7 @@
 * npm install 
 
 ## run the model 
-* cd flask-vue-template
+* cd frontend
 * source /env/bin/activate
 * pip install Flask==1.0.2 Flask-Cors==3.0.7
 * cd server
