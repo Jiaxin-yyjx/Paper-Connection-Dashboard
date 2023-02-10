@@ -1,13 +1,19 @@
 <template>
   <div id="app">
-      <el-row>
-        <el-col :span="10">
-          <div style="height:100px; border:1px solid black">
+    <el-row><Menu/></el-row>  
+    
+    <el-row>
+         <el-col :span="5">
+          <div style="height:800px; border:2px solid black">
+            <River/>
           </div>
         </el-col>
-         <el-col :span="14">
-          <div style="height:170px; border:1px solid black">
-            <River/>
+        <el-col :span="10">
+          <div style="height:500px; border:2px solid black">
+          </div>
+        </el-col>
+         <el-col :span="9">
+          <div style="height:500px; border:2px solid black">
           </div>
          </el-col>
       </el-row>
@@ -23,10 +29,11 @@
 
 <script>
 import River from './components/River.vue'
+import Menu from './components/menu.vue'
 export default {
   name: 'App',
   components:{
-    River,
+    River, Menu,
   }
 }
 </script>
@@ -41,9 +48,7 @@ export default {
   margin-top: 60px;
 }
 .el-row {
-    margin-bottom: 20px & :last-child {
-      margin-bottom: 0;
-    }
+    margin-bottom: 40px;
   }
   .el-col {
     border-radius: 4px;
