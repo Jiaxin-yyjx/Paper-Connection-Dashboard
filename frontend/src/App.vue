@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <el-row><Menu/></el-row>  
+    <el-row><TopMenu/></el-row>  
     
     <el-row>
          <el-col :span="5">
           <div style="height:800px; border:2px solid black">
-            <River/>
+            <Keyword/>
           </div>
         </el-col>
         <el-col :span="10">
@@ -29,11 +29,12 @@
 
 <script>
 import River from './components/River.vue'
-import Menu from './components/menu.vue'
+import TopMenu from './components/menu.vue'
+import Keyword from './components/Keyword.vue'
 export default {
   name: 'App',
   components:{
-    River, Menu,
+    River, TopMenu, Keyword,
   }
 }
 </script>
