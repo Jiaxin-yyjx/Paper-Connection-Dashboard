@@ -10,7 +10,7 @@
 
 ## run the model 
 * cd frontend
-* source /env/bin/activate
+* source env/bin/activate
 * pip install Flask==1.0.2 Flask-Cors==3.0.7
 * cd server
 * python app.py # run the server
