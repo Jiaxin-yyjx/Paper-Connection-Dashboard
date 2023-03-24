@@ -3,26 +3,35 @@
     <el-row><TopMenu/></el-row>  
     
     <el-row>
-         <el-col :span="5">
+        <el-col :span="5">
           <div style="height:800px; border:2px solid black">
             <Keyword/>
           </div>
         </el-col>
         <el-col :span="10">
           <div style="height:500px; border:2px solid black">
+            <Graph1/>
           </div>
         </el-col>
          <el-col :span="9">
           <div style="height:500px; border:2px solid black">
+            <Information/>
           </div>
          </el-col>
-      </el-row>
-       <el-row>
+         <el-col :span="19">
+          <div style="height:300px; border:2px solid black">
+            <Abstract/>
+          </div>
+         </el-col>
+    </el-row>
+       
+    
+      <!-- <el-row>
   <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
   <el-col :span="6"><div class="grid-content bg-purple-light"></div></el-col>
   <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
   <el-col :span="6"><div class="grid-content bg-purple-light"></div></el-col>
-</el-row>
+</el-row> -->
 
   </div>
 </template>
@@ -31,10 +40,14 @@
 import River from './components/River.vue'
 import TopMenu from './components/menu.vue'
 import Keyword from './components/Keyword.vue'
+import Information from './components/Information.vue'
+import Abstract from './components/abstract.vue'
+import Graph1 from './components/Graph1.vue'
+import Graph2 from './components/Graph2.vue'
 export default {
   name: 'App',
   components:{
-    River, TopMenu, Keyword,
+    River, TopMenu, Keyword, Abstract, Graph1, Graph2, Information
   }
 }
 </script>

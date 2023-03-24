@@ -8,27 +8,27 @@
       @selection-change="handleSelectionChange">
       <el-table-column
         type="selection"
-        width="55">
+        width="50">
       </el-table-column>
-      <el-table-column
-        label="A"
-        width="120">
+      <!-- <el-table-column
+        label="Keywords"
+        width="200">
         <template slot-scope="scope">{{ scope.row.date }}</template>
-      </el-table-column>
+      </el-table-column> -->
       <el-table-column
         prop="name"
-        label="B"
+        label="Keywords"
         width="120">
       </el-table-column>
-      <el-table-column
+      <!-- <el-table-column
         prop="address"
         label="C"
         show-overflow-tooltip>
-      </el-table-column>
+      </el-table-column> -->
     </el-table>
     <div>
-      <el-button @click="toggleSelection([tableData[1], tableData[2]])">Change the status of second and third lines.</el-button>
-      <el-button @click="toggleSelection()">Cancel choice.</el-button>
+      <!-- <el-button @click="toggleSelection([tableData[1], tableData[2]])">Change the status of second and third lines.</el-button> -->
+      <el-button @click="toggleSelection()">Cancel choice</el-button>
     </div>
   </div>
   </template>

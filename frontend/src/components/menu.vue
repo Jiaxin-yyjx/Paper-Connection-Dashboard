@@ -69,7 +69,7 @@
     methods: {
       handleSelect (key, keyPath) {
         var name = ''
-        if (key === '1') name = 'homepage'
+        if (key === '1') name = 'TVCG'
         if (key === '4') name = 'productpage'
         if (key === '3') name = 'securityresearch'
         if (key === '2') name = 'aboutus'
