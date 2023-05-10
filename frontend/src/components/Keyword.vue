@@ -1,4 +1,5 @@
 <template>
+  <div class="TVCG">
   <div>
    <el-table
       ref="multipleTable"
@@ -31,10 +32,12 @@
       <el-button @click="toggleSelection()">Cancel choice</el-button>
     </div>
   </div>
+</div>
   </template>
   
   <script>
     export default {
+      name: 'TVCG',
       data() {
         return {
           tableData: [{

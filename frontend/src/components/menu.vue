@@ -11,9 +11,9 @@
       active-text-color="#ffd04b">
         <p class="logo-title"><i class="el-icon-star-on"></i>IEEE Paper</p>
         <el-menu-item index="1" style="margin-left:400px;">TVCG</el-menu-item>
-        <el-menu-item index="2">XXXX</el-menu-item>
-        <el-menu-item index="3">XXXX</el-menu-item>
-        <el-menu-item index="4">XXXX</el-menu-item>
+        <el-menu-item index="2">Content2</el-menu-item>
+        <el-menu-item index="3">Content3</el-menu-item>
+        <el-menu-item index="4">Content4</el-menu-item>
       </el-menu>
     </div>
   </template>
@@ -70,9 +70,9 @@
       handleSelect (key, keyPath) {
         var name = ''
         if (key === '1') name = 'TVCG'
-        if (key === '4') name = 'productpage'
-        if (key === '3') name = 'securityresearch'
-        if (key === '2') name = 'aboutus'
+        if (key === '4') name = 'Content4'
+        if (key === '3') name = 'Content3'
+        if (key === '2') name = 'Content2'
         var targetEle = document.querySelector('.' + name)
         var offsetTop = targetEle.offsetTop
         document.documentElement.scrollTop = offsetTop - 150
