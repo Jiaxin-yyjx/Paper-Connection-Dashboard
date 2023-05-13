@@ -38,6 +38,20 @@ def process_data():
 				'result':data}
 				return jsonify(response)
 
+# Keyword csv import           
+@app.route('/keydata', methods=['GET'])
+@cross_origin()
+def key_data():
+		print('Backend received the post request')
+		if request.method == 'GET':
+			# Process the existed data
+			data = pd.read_csv('simi_Keyword.csv')
+			json_str = data.to_json(orient='records')
+			# Return a response
+			response = {'message': 'Data processed successfully',
+			'result':json_str}
+			return jsonify(response)
+
 # sanity check route
 @app.route('/ping', methods=['GET'])
 def ping_pong():
