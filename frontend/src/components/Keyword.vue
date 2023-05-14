@@ -1,7 +1,7 @@
 <template>
   <div class="TVCG">
   <div>
-   <el-table
+  <el-table
       ref="multipleTable"
       :data="tableData"
       tooltip-effect="dark"
@@ -30,49 +30,20 @@
     <div>
       <!-- <el-button @click="toggleSelection([tableData[1], tableData[2]])">Change the status of second and third lines.</el-button> -->
       <el-button @click="toggleSelection()">Cancel choice</el-button>
+      </div>
     </div>
   </div>
-</div>
-  </template>
+</template>
   
   <script>
+  import store from '../store'
     export default {
       name: 'TVCG',
       data() {
         return {
-          tableData: [{
-            date: '2016-05-03',
-            name: 'XXX',
-            address: 'BUIJ'
-          }, {
-            date: '2016-05-02',
-            name: 'XXX',
-            address: 'PKJH'
-          }, {
-            date: '2016-05-04',
-            name: 'XXX',
-            address: 'PKJH'
-          }, {
-            date: '2016-05-01',
-            name: 'XXX',
-            address: 'PKJH'
-          }, {
-            date: '2016-05-08',
-            name: 'XXX',
-            address: 'PKJH'
-          }, {
-            date: '2016-05-06',
-            name: 'XXX',
-            address: 'PKJH'
-          }, {
-            date: '2016-05-07',
-            name: 'XXX',
-            address: 'PKJH'
-          }],
-          multipleSelection: []
+          tableData: this.$store.state.files
         }
       },
-  
       methods: {
         toggleSelection(rows) {
           if (rows) {
@@ -84,6 +55,8 @@
           }
         },
         handleSelectionChange(val) {
+          console.log(val)
+          store.commit('selectKeywords', [{namePeople:'123',nameArticle:'4321'}])
           this.multipleSelection = val;
         }
       }

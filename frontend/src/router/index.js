@@ -1,17 +1,18 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-// import Ping from '@/components/Ping'
+import VueRouter from 'vue-router'
+import App from '../App.vue'
 
-Vue.use(Router)
+Vue.use(VueRouter)
+const routes = [
+  {
+    path:"/",
+    name:"Home",
+    component: App
+  }
+]
 
-export default new Router({
+export default new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  // routes: [
-  //   {
-  //     // path: '/ping',
-  //     // name: 'Ping',
-  //     // component: Ping,
-  //   }
-  // ]
+  routes
 })

@@ -1,6 +1,6 @@
 <template>
   <div>
-   <el-table
+  <el-table
       ref="multipleTable"
       :data="tableData"
       tooltip-effect="dark"
@@ -37,35 +37,7 @@
     export default {
       data() {
         return {
-          tableData: [{
-            date: '2016-05-03',
-            namePeople: 'XXX',
-            nameArticle: 'BUIJ'
-          }, {
-            date: '2016-05-02',
-            namePeople: 'XXX',
-            nameArticle: 'PKJH'
-          }, {
-            date: '2016-05-04',
-            namePeople: 'XXX',
-            nameArticle: 'PKJH'
-          }, {
-            date: '2016-05-01',
-            namePeople: 'XXX',
-            nameArticle: 'PKJH'
-          }, {
-            date: '2016-05-08',
-            namePeople: 'XXX',
-            nameArticle: 'PKJH'
-          }, {
-            date: '2016-05-06',
-            namePeople: 'XXX',
-            nameArticle: 'PKJH'
-          }, {
-            date: '2016-05-07',
-            namePeople: 'XXX',
-            nameArticle: 'PKJH'
-          }],
+          tableData: this.$store.state.author_title,
           multipleSelection: []
         }
       },
