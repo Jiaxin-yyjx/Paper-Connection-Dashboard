@@ -26,7 +26,8 @@
   export default {
     computed: {
       firstRow() {
-        return this.$store.state.files.map((file) => ({Abstract: file.Abstract}))[0].Abstract
+        // return this.$store.state.files.map((file) => ({Abstract: file.Abstract}))[0].Abstract
+        return this.$store.getters.getAbstract;
       }
     }
   }

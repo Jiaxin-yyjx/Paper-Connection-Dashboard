@@ -1,15 +1,15 @@
 <template>
   <div>
-  <el-table
-      ref="multipleTable"
+    <el-table
+      ref="singleTable"
       :data="tableData"
-      tooltip-effect="dark"
-      height="400"
-      style="width: 100%"
-      @selection-change="handleSelectionChange">
-      <el-table-column
-        type="selection"
-        width="50">
+      highlight-current-row
+      @current-change="handleCurrentChange"
+      height="430"
+      style="width: 100%">
+    <el-table-column
+      type="index"
+      width="50">
       </el-table-column>
       <el-table-column
         prop="namePeople"
@@ -27,9 +27,9 @@
         show-overflow-tooltip>
       </el-table-column> -->
     </el-table>
-    <div>
-      <!-- <el-button @click="toggleSelection([tableData[1], tableData[2]])">Change the status of second and third lines.</el-button> -->
-      <el-button @click="toggleSelection()">Cancel choice</el-button>
+    <div style="margin-top: 20px">
+      <el-button @click="setCurrent(tableData[1])">Select second row</el-button>
+      <el-button @click="setCurrent()">Clear selection</el-button>
     </div>
   </div>
   </template>
@@ -38,24 +38,29 @@
     export default {
       data() {
         return {
-          tableData: this.$store.state.author_title,
-          multipleSelection: []
+          // tableData: this.$store.state.author_title,
+          currentRow: null
         }
       },
-  
-      methods: {
-        toggleSelection(rows) {
-          if (rows) {
-            rows.forEach(row => {
-              this.$refs.multipleTable.toggleRowSelection(row);
-            });
-          } else {
-            this.$refs.multipleTable.clearSelection();
-          }
+      computed: {
+        tableData() {
+          return this.$store.getters.getAuthorTitle;
         },
-        handleSelectionChange(val) {
-          this.multipleSelection = val;
-        }
+      },
+      methods: {
+        setCurrent(row) {
+          this.$refs.singleTable.setCurrentRow(row);
+      },
+        handleCurrentChange(val) {
+          this.currentRow = val;
+          this.$store.commit('selectArticle', val)
+          // console.log(val, 'changeee!!')
+      }
+        // handleSelectionChange(val) {
+        //   this.multipleSelection = val;
+        //   this.$store.commit('selectArticle', val)
+        //   // console.log(val, 'changeee!!')
+        // }
       }
     }
   </script>

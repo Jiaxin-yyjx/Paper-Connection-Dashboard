@@ -1,6 +1,15 @@
 <template>
   <div class="TVCG">
   <div>
+  <el-input
+      v-model="searchText"
+      placeholder="Search..."
+      @keyup.enter.native="search"
+      clearable
+  ></el-input>
+
+  <!-- <p>Showing {{ filteredData.length }} out of {{ tableData.length }} results.</p> -->
+
   <el-table
       ref="multipleTable"
       :data="tableData"
@@ -42,10 +51,29 @@
       name: 'TVCG',
       data() {
         return {
+          searchText: '',
           tableData: this.$store.state.files.map((file) => ({name: file.name})).filter((file, index, self) =>
           index === self.findIndex((t) => (JSON.stringify(t) === JSON.stringify(file))))
         }
       },
+      computed: {
+        filteredData() {
+        if (this.searchText) {
+        // Filter the table data based on the search text
+        return this.tableData.filter(item => {
+          // Modify this condition based on your requirements
+          return (
+            item.Keywords.toLowerCase().includes(this.searchText.toLowerCase())
+          )
+        })
+        } else {
+        return this.tableData
+        }
+      },
+      // filteredDataCount() {
+      //   return this.filteredData.length;
+      // }
+    },
       methods: {
         toggleSelection(rows) {
           if (rows) {
@@ -57,8 +85,15 @@
           }
         },
         handleSelectionChange(val) {
-          store.commit('selectKeywords', [{namePeople:'123',nameArticle:'4321'}])
+          // console.log(val, 'changeee!!')
+          this.$store.commit('selectKeywords', val)
+          // this.$store.commit('selectKeywords', [{namePeople:'123',nameArticle:'4321'}])
+          // this.$store.commit('Test', val)
           this.multipleSelection = val;
+        },
+        search() {
+        // Perform the search action
+        console.log('Performing search:', this.searchText)
         }
       }
     }
