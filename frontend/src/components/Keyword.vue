@@ -57,7 +57,6 @@
           }
         },
         handleSelectionChange(val) {
-          console.log(val)
           store.commit('selectKeywords', [{namePeople:'123',nameArticle:'4321'}])
           this.multipleSelection = val;
         }

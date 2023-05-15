@@ -1,20 +1,33 @@
 <template>
-    <el-scrollbar height="100px">
-        <h4>Abstract</h4>
-      <p v-for="item in 5" :key="item" class="scrollbar-demo-item">{{ item }}</p>
+  <div class="scrollable-container">
+    <el-scrollbar height="300px">
+      <p><strong>Abstract</strong></p>
+      <p class="scrollable-content">
+        {{ firstRow }}
+      </p>
     </el-scrollbar>
-  </template>
-  
-<style scoped>
-  .scrollbar-demo-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 20px;
-    margin: 10px;
+  </div>
+</template>
+
+<style>
+  .scrollable-container {
+    height: 300px;
+    overflow: hidden;
+  }
+
+  .scrollable-content {
+    max-height: 200px;
+    overflow-y: auto;
     text-align: left;
-    border-radius: 4px;
-    background: var(--el-color-primary-light-9);
-    color: var(--el-color-primary);
   }
 </style>
+
+<script>
+  export default {
+    computed: {
+      firstRow() {
+        return this.$store.state.files.map((file) => ({Abstract: file.Abstract}))[0].Abstract
+      }
+    }
+  }
+</script>

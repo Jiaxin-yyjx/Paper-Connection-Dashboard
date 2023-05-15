@@ -31,7 +31,7 @@
           </div>
         </el-col>
     </el-row>
-    <el-row><div style="height:500px; border:2px solid black"><Graph2/></div></el-row>  
+    <!-- <el-row><div style="height:500px; border:2px solid black"><Graph2/></div></el-row>   -->
     
 <!-- <el-row>
   <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
