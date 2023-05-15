@@ -42,7 +42,8 @@
       name: 'TVCG',
       data() {
         return {
-          tableData: [...new Set(this.$store.state.files)]
+          tableData: this.$store.state.files.map((file) => ({name: file.name})).filter((file, index, self) =>
+          index === self.findIndex((t) => (JSON.stringify(t) === JSON.stringify(file))))
         }
       },
       methods: {
