@@ -4,6 +4,7 @@
       ref="multipleTable"
       :data="tableData"
       tooltip-effect="dark"
+      height="400"
       style="width: 100%"
       @selection-change="handleSelectionChange">
       <el-table-column
@@ -12,8 +13,8 @@
       </el-table-column>
       <el-table-column
         prop="namePeople"
-        label="Author"
-        width="200">
+        label="Contact Author"
+        width="150">
       </el-table-column>
       <el-table-column
         prop="nameArticle"

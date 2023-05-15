@@ -5,6 +5,7 @@
       ref="multipleTable"
       :data="tableData"
       tooltip-effect="dark"
+      height="700"
       style="width: 100%"
       @selection-change="handleSelectionChange">
       <el-table-column
@@ -19,7 +20,7 @@
       <el-table-column
         prop="name"
         label="Keywords"
-        width="120">
+        width="200">
       </el-table-column>
       <!-- <el-table-column
         prop="address"
@@ -41,7 +42,7 @@
       name: 'TVCG',
       data() {
         return {
-          tableData: this.$store.state.files
+          tableData: [...new Set(this.$store.state.files)]
         }
       },
       methods: {
