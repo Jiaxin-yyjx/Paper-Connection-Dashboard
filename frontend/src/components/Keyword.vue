@@ -8,8 +8,6 @@
       clearable
   ></el-input>
 
-  <!-- <p>Showing {{ filteredData.length }} out of {{ tableData.length }} results.</p> -->
-
   <el-table
       ref="multipleTable"
       :data="tableData"
